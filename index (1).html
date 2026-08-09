@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathysie - En construction</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Grille de fond animée pour un style technique/dev */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, transparent, black, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, transparent 10%, black 50%, transparent 90%);
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-white font-body antialiased min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+
+    <!-- Background technique -->
+    <div class="absolute inset-0 z-0 bg-grid pointer-events-none"></div>
+    
+    <!-- Lueur d'arrière-plan -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse-slow"></div>
+
+    <header class="absolute top-0 w-full z-50 p-6 flex justify-center items-center">
+        <h1 class="text-2xl font-heading font-black text-white/80 tracking-widest uppercase">
+            <i class="fa-solid fa-rocket mr-2 text-blue-500"></i> Mathysie
+        </h1>
+    </header>
+
+    <main class="relative z-10 text-center px-4 max-w-3xl mx-auto flex flex-col items-center mt-12">
+        
+        <!-- Icône de construction flottante -->
+        <div class="mb-8 relative animate-float">
+            <div class="absolute inset-0 bg-yellow-500/20 blur-xl rounded-full"></div>
+            <div class="w-24 h-24 bg-gray-900 border-2 border-yellow-500/50 rounded-2xl flex items-center justify-center relative z-10 shadow-[0_0_30px_rgba(234,179,8,0.2)]">
+                <i class="fa-solid fa-person-digging text-5xl text-yellow-500"></i>
+            </div>
+        </div>
+
+        <h2 class="text-4xl md:text-6xl font-heading font-black mb-6 uppercase tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-500 drop-shadow-sm">
+            Site en construction
+        </h2>
+        
+        <p class="text-gray-400 text-lg md:text-xl font-medium mb-10 max-w-xl leading-relaxed">
+            L'équipe de la <span class="text-white font-bold">Mathysie</span> travaille activement sur le nouveau portail. En attendant, nous vous présentons ce site horrible fait à l'IA :)
+        </p>
+
+        <!-- Bande de séparation / Décoration -->
+        <div class="w-24 h-1 bg-gradient-to-r from-transparent via-gray-600 to-transparent mb-10 rounded-full"></div>
+
+        <p class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">
+            En attendant, vous cherchez le launcher ?
+        </p>
+
+        <a href="/katapulte" class="group relative inline-flex items-center gap-3 px-8 py-4 bg-white text-gray-950 font-heading font-black text-lg uppercase tracking-wide rounded-xl overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]">
+            <div class="absolute inset-0 w-0 bg-blue-100 transition-all duration-300 ease-out group-hover:w-full -z-10"></div>
+            <i class="fa-solid fa-download text-xl group-hover:-translate-y-1 transition-transform"></i>
+            Télécharger Katapulte
+            <i class="fa-solid fa-arrow-right ml-2 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
+        </a>
+
+    </main>
+
+    <footer class="absolute bottom-0 w-full text-center py-6 text-gray-600 text-xs font-bold uppercase tracking-widest">
+        &copy; 2026 Association Mathysie. Tous droits réservés.
+    </footer>
+
+</body>
+</html>
